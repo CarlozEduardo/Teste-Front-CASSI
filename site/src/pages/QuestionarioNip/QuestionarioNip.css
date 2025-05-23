@@ -1,0 +1,11 @@
+.alert {
+  transition: all 0.3s ease-in-out;
+}
+
+.text-azul-escuro {
+  color: #003366; 
+}
+
+.verde {
+  color: #36b74e; 
+}

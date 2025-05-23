@@ -4,10 +4,13 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import Button from "../../components/button/Button";
 import MessageAlert from "../../components/message-alert/MessageAlert";
-import { use, useState } from "react";
+import { useState } from "react";
 import ModalDadosContato from "../../components/modal-dados-contato/ModalDadosContato";
+import { useSearchParams } from 'react-router-dom';
 
 const QuestionarioNip = () => {
+  const [searchParams] = useSearchParams();
+  const nomeUser = searchParams.get('nome');
   const [step, setStep] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [alertType, setAlertType] = useState(null);
@@ -81,7 +84,7 @@ const QuestionarioNip = () => {
       <div className="container mt-5 bg-white p-4">
         <div className="row">
           <div className="col-md-8">
-            <h5 className="fw-bold text-azul-escuro">Olá, &lt;nome&gt;</h5>
+            <h5 className="fw-bold text-azul-escuro">Olá, {nomeUser}</h5>
             <p>
               Foi realizada a abertura de uma Notificação de Intermediação
               Preliminar (NIP) em seu nome.
